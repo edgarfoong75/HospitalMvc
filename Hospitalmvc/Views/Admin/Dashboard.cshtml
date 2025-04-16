@@ -1,0 +1,50 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard</h2>
+
+<h3>All Appointments</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date/Time</th>
+            <th>Doctor</th>
+            <th>Patient</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appt in Model.Appointments)
+        {
+            <tr>
+                <td>@appt.Id</td>
+                <td>@appt.DateTime</td>
+                <td>@appt.Doctor</td>
+                <td>@appt.Patient</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>User Management</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Role</td>
+            </tr>
+        }
+    </tbody>
+</table>

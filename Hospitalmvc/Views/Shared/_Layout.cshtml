@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Hospital Appointment System</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+</head>
+<body>
+    @await Html.PartialAsync("_Navbar") <!-- Include the Navbar Partial View -->
+
+    <div class="container">
+        @RenderBody() <!-- Render page content -->
+    </div>
+</body>
+</html>

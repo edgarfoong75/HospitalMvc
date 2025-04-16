@@ -1,0 +1,25 @@
+﻿@{
+    var doctors = (List<Doctor>)ViewData["Doctors"];
+}
+
+<h2>Schedule an Appointment</h2>
+
+<form method="post">
+    <div>
+        <label>Doctor:</label>
+        <select name="DoctorName" required>
+            <option value="">Select a doctor</option>
+            @foreach (var doctor in doctors)
+            {
+                <option value="@doctor.Name">@doctor.Name</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <label>Appointment Date & Time:</label>
+        <input type="datetime-local" name="AppointmentDate" required />
+    </div>
+
+    <button type="submit">Book Appointment</button>
+</form>

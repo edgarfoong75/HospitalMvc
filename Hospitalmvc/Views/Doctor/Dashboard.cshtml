@@ -1,0 +1,26 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Doctor Dashboard";
+}
+
+<h2>Your Appointments</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date/Time</th>
+            <th>Patient</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appt in Model)
+        {
+            <tr>
+                <td>@appt.Id</td>
+                <td>@appt.DateTime</td>
+                <td>@appt.Patient</td>
+            </tr>
+        }
+    </tbody>
+</table>
